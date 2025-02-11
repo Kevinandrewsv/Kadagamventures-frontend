@@ -7,7 +7,7 @@ import AboutUs from "./pages/AboutUs";
 import ContactUs from "./pages/ContactUs";
 import NithyaEvent from "./pages/NithyaEvent.jsx";
 import NithyaTickets from "./pages/NithyaTickets";
-import KadagamFoundation from "./pages/kadagamfoundation";
+import KadagamFoundation from "./pages/KadagamFoundation.jsx";
 
 function App() {
   return (
