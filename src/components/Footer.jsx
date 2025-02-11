@@ -1,15 +1,22 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookF, faInstagram, faTwitter, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 import { useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 export default function Footer() {
-  const location = useLocation(); // Get current path
-  const currentPath = location.pathname;
+  const location = useLocation();
+  const [currentPath, setCurrentPath] = useState(location.pathname);
 
-  console.log("Current Path:", currentPath); // Debugging
+  useEffect(() => {
+    setCurrentPath(location.pathname); // Ensure state updates on route change
+    console.log("Current Path:", location.pathname); // Debugging
+  }, [location.pathname]);
+
+  // Normalize paths to remove trailing slashes
+  const normalizedPath = currentPath.replace(/\/$/, "");
 
   // Define pages where "Kadagam Ventures" should be visible
-  const showKadagamText = ["/", "/about", "/contact"].includes(currentPath);
+  const showKadagamText = ["/", "/about", "/contact"].includes(normalizedPath);
 
   // Social Media Links for Each Section
   const socialMediaLinks = {
@@ -70,11 +77,11 @@ export default function Footer() {
           )}
 
           {/* Show Social Links based on current page */}
-          {socialMediaLinks[currentPath] && (
+          {socialMediaLinks[normalizedPath] && (
             <div>
               <h3 className="font-semibold text-gray-900 text-lg">Follow Us</h3>
               <div className="flex justify-center md:justify-end space-x-4 mt-3">
-                {socialMediaLinks[currentPath].map((link, index) => (
+                {socialMediaLinks[normalizedPath].map((link, index) => (
                   <a
                     key={index}
                     href={link.url}

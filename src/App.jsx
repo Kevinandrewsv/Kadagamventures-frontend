@@ -1,12 +1,12 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./styles.css"; 
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import Home from "./pages/Home";
-import AboutUs from "./pages/AboutUs";
-import ContactUs from "./pages/ContactUs";
+import Navbar from "./components/Navbar.jsx";
+import Footer from "./components/Footer.jsx";
+import Home from "./pages/Home.jsx";
+import AboutUs from "./pages/AboutUs.jsx";
+import ContactUs from "./pages/ContactUs.jsx";
 import NithyaEvent from "./pages/NithyaEvent.jsx";
-import NithyaTickets from "./pages/NithyaTickets";
+import NithyaTickets from "./pages/NithyaTickets.jsx";
 import KadagamFoundation from "./pages/KadagamFoundation.jsx";
 
 function App() {
