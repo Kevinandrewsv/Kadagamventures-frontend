@@ -1,6 +1,6 @@
 export default function ContactForm() {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-blue-100 px-4 pt-15 pb-15">
+      <div className="min-h-screen flex items-center justify-center bg-blue-100 px-4 pt-30 pb-15">
         <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-2xl">
           {/* Title */}
           <h2 className="text-2xl font-semibold text-center text-gray-900">

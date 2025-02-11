@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { IoIosArrowDown } from "react-icons/io"; // Dropdown arrow icon
 import logo from "../assets/kadagamLogo.png";
@@ -10,7 +10,13 @@ import DropdownIcon3 from "../assets/DropdownIcon3.png";
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const navigate = useNavigate(); // ✅ Use for programmatic navigation
+  const navigate = useNavigate();
+  const location = useLocation(); // Get current location
+
+  // Scroll to top when route changes
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [location.pathname]); // Run whenever the pathname changes
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -19,7 +25,6 @@ export default function Navbar() {
         setDropdownOpen(false);
       }
     }
-
     document.addEventListener("click", handleClickOutside);
     return () => document.removeEventListener("click", handleClickOutside);
   }, []);
@@ -31,16 +36,16 @@ export default function Navbar() {
     { name: "Kadagam Foundation", path: "/KadagamFoundation", icon: DropdownIcon3 },
   ];
 
-  // Function to navigate and close menu
+  // Function to navigate, scroll to top, and close menus
   const handleNavigate = (path) => {
     navigate(path);
+    window.scrollTo({ top: 0, behavior: "smooth" }); // Ensure page scrolls to top
     setDropdownOpen(false);
     setMenuOpen(false);
   };
 
   return (
     <nav className="fixed top-0 left-0 w-full px-6 py-4 flex items-center justify-between z-50 bg-white shadow-md">
-      
       {/* Logo */}
       <div className="flex items-center space-x-2">
         <img src={logo} alt="Logo" className="h-20 w-20" />
@@ -48,9 +53,9 @@ export default function Navbar() {
 
       {/* Desktop Menu */}
       <ul className="hidden md:flex space-x-6 items-center">
-        {["Home", "About Us", "Products", "Contact Us"].map((item, index) => (
+        {["Home", "About Us", "Our Entities", "Contact Us"].map((item, index) => (
           <li key={index} className="relative">
-            {item === "Products" ? (
+            {item === "Our Entities" ? (
               <div className="dropdown-menu relative">
                 <button
                   className="flex items-center text-gray-700 hover:text-blue-600 font-medium transition-all duration-300"
@@ -60,17 +65,15 @@ export default function Navbar() {
                   }}
                 >
                   {item}
-                  <IoIosArrowDown 
-                    className={`ml-1 transition-transform duration-300 ${dropdownOpen ? "rotate-180" : "rotate-0"}`} 
-                  />
+                  <IoIosArrowDown className={`ml-1 transition-transform duration-300 ${dropdownOpen ? "rotate-180" : "rotate-0"}`} />
                 </button>
 
                 {/* Dropdown Menu */}
                 {dropdownOpen && (
                   <ul className="absolute left-0 top-full mt-2 bg-white shadow-lg rounded-lg w-56 text-left z-50">
                     {dropdownItems.map((subItem, subIndex) => (
-                      <li 
-                        key={subIndex} 
+                      <li
+                        key={subIndex}
                         className="px-4 py-2 flex items-center space-x-2 hover:bg-gray-200 transition cursor-pointer"
                         onClick={() => handleNavigate(subItem.path)}
                       >
@@ -85,6 +88,7 @@ export default function Navbar() {
               <Link
                 to={item === "Home" ? "/" : `/${item.toLowerCase().replace(/\s+/g, "")}`}
                 className="text-gray-700 hover:text-blue-600 font-medium transition-all duration-300"
+                onClick={() => handleNavigate(item === "Home" ? "/" : `/${item.toLowerCase().replace(/\s+/g, "")}`)}
               >
                 {item}
               </Link>
@@ -110,9 +114,9 @@ export default function Navbar() {
         </button>
 
         <ul className="flex flex-col mt-16 space-y-6 text-center">
-          {["Home", "About Us", "Products", "Contact Us"].map((item, index) => (
+          {["Home", "About Us", "Our Entities", "Contact Us"].map((item, index) => (
             <li key={index} className="relative">
-              {item === "Products" ? (
+              {item === "Our Entities" ? (
                 <div className="dropdown-menu relative">
                   <button
                     className="text-gray-700 text-lg flex items-center justify-center w-full hover:text-blue-600 transition"
@@ -122,16 +126,14 @@ export default function Navbar() {
                     }}
                   >
                     {item}
-                    <IoIosArrowDown 
-                      className={`ml-1 transition-transform duration-300 ${dropdownOpen ? "rotate-180" : "rotate-0"}`} 
-                    />
+                    <IoIosArrowDown className={`ml-1 transition-transform duration-300 ${dropdownOpen ? "rotate-180" : "rotate-0"}`} />
                   </button>
 
                   {dropdownOpen && (
                     <ul className="bg-gray-100 rounded-lg mt-2 text-left">
                       {dropdownItems.map((subItem, subIndex) => (
-                        <li 
-                          key={subIndex} 
+                        <li
+                          key={subIndex}
                           className="px-4 py-2 flex items-center space-x-2 hover:bg-gray-300 transition cursor-pointer"
                           onClick={() => handleNavigate(subItem.path)}
                         >
@@ -146,7 +148,7 @@ export default function Navbar() {
                 <Link
                   to={item === "Home" ? "/" : `/${item.toLowerCase().replace(/\s+/g, "")}`}
                   className="text-gray-700 hover:text-blue-600 text-lg transition-all duration-300"
-                  onClick={() => setMenuOpen(false)}
+                  onClick={() => handleNavigate(item === "Home" ? "/" : `/${item.toLowerCase().replace(/\s+/g, "")}`)}
                 >
                   {item}
                 </Link>
@@ -154,13 +156,6 @@ export default function Navbar() {
             </li>
           ))}
         </ul>
-
-        {/* Mobile Button */}
-        <div className="mt-6 text-center">
-          <button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-all duration-300">
-            Get Started
-          </button>
-        </div>
       </div>
     </nav>
   );

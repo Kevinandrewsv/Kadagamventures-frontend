@@ -10,10 +10,7 @@ export default function FounderSection() {
           <span className="text-blue-600">Naveen Kumar </span>, the Founder of  Kadagam Ventures.
         </h2>
         <p className="text-gray-600 text-base sm:text-lg leading-relaxed">
-        <b>Mr. Naveen Kumar – A Visionary Leader</b> <br />
-The Director of Kadagam Ventures Pvt. Ltd., is a trailblazer in the event management industry, driven by a passion for innovation and excellence. Under his leadership, Kadagam Ventures has introduced NithyaEvent and NithyaTickets, two revolutionary platforms that simplify event planning, rentals, and ticket booking. <br /> <br />
-
-Beyond business, Mr. Naveen Kumar is the founder of Kadagam Foundation, a non-profit organization committed to community welfare and sustainable development. His dedication to education, social empowerment, and cultural preservation reflects his deep-rooted vision for a better society. <br /> <br />
+       Beyond business, Mr. Naveen Kumar is the founder of Kadagam Foundation, a non-profit organization committed to community welfare and sustainable development. His dedication to education, social empowerment, and cultural preservation reflects his deep-rooted vision for a better society. <br /> <br />
 
 His latest venture, NithyaEvent, is a cutting-edge all-in-one event rental platform, making it effortless for organizers to book essentials like sound systems, lighting, video production, photography, and mood boards.By combining technology with convenience, he continues to redefine how events are planned and executed. <br /> <br />
 

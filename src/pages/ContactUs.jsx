@@ -6,10 +6,10 @@ export default function ContactUs() {
   return (
     <div>
       {/* Hero Section */}
-      
+      <ContactForm />
         <ContactpageCover />
     
-      <ContactForm />
+      
     </div>
   );
 }

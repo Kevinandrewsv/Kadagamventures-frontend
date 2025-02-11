@@ -53,9 +53,7 @@ const WhatWeBuild = () => {
     <div className="container mx-auto px-6 md:px-20 lg:px-32 text-left mt-12">
       {/* Title */}
       <div className="text-center">
-        <h2 className="text-2xl font-bold text-gray-900">What We Build</h2>
-        <p className="text-gray-600 mt-2">Nithya Events for unforgettable celebrations, Nithya Contact for seamless networking, </p>
-        <p className="text-gray-600">and Kadagam Foundation for meaningful social impact.</p>
+        <h2 className="text-4xl font-bold text-gray-900">What We Build</h2>
       </div>
 
       {/* Event Section */}
@@ -78,7 +76,7 @@ const WhatWeBuild = () => {
         <FeatureCard
           icon={<img src={ticketsIcon} alt="Tickets Icon" className="w-6 h-6" />}
           title="Handle Ticketing Easily"
-          subtitle="Nithya makes ticket booking simple"
+          subtitle="Nithya Ticket makes booking simple"
           highlight="Nithya Tickets"
           description={{
             title: "Seamless Ticketing Experience.",

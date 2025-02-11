@@ -10,7 +10,7 @@ const AboutSection = () => {
           Kadagam Ventures Private Limited
         </h2>
         <p className="text-gray-600">
-          At Kadagam Foundation, the generosity of our donors makes all our efforts possible.
+          At Kadagam Ventures, the generosity of our donors makes all our efforts possible.
           Here’s what some of our supporters have to say about their experience.
         </p>
         <button className="bg-blue-600 text-white px-4 py-2 rounded-md shadow-md hover:bg-blue-700 transition duration-300">

@@ -25,8 +25,9 @@ const InvestmentSection = () => {
             <span className="text-blue-600">Invest</span> in Kadagam Ventures<span className="text-gray-900">.</span>
           </h2>
           <p className="text-gray-700 leading-relaxed">
-            Unlock the Future with Kadagam Ventures Pvt Ltd
-            At Kadagam Ventures Pvt Ltd, we are not just building businesses; we are shaping industries. With a strong foundation in technology, innovation, and customer-centric solutions, we offer unparalleled investment opportunities across our diverse ventures. <br /> <br />
+          Unlock the Future with Kadagam Ventures Pvt Ltd
+
+At Kadagam Ventures Pvt Ltd, we are not just building businesses—we are shaping industries. With a strong foundation in technology, innovation, and customer-centric solutions, we provide unparalleled investment opportunities across our diverse ventures. <br /> <br />
             1. Scalable Business Models – High-growth potential across multiple sectors. <br />
             2. Proven Market Demand – Each venture addresses key industry needs. <br />
             3. Visionary Leadership – A dedicated team driving innovation and impact. <br />

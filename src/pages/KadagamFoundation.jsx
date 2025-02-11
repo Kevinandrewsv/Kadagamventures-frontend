@@ -1,5 +1,5 @@
 import ProductTickets  from "../assets/farmerFoundation.png"
-import Kadagam from "../assets/Kadagam.png";
+import Kadagam from "../assets/kadagam.png";
 
 // Features Section Component
 const FeaturesSection = () => {
