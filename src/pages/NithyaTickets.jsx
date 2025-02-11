@@ -76,9 +76,7 @@ const nithyaticketsPage = () => {
 A next-generation ticketing platform designed for convenience and efficiency. Whether for movies, concerts, or events, we simplify bookings with a seamless user experience and secure transactions
 
           </p>
-          <button className="mt-6 px-6 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition">
-            Get Started
-          </button>
+          
         </div>
       </div>
 

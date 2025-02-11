@@ -9,10 +9,26 @@ import foundationIcon from "../assets/KadagamFoundation.png";
 
 export default function HeroSection() {
   const slides = [
-    { image: building1, text: "KADAGAM VENTURES" },
-    { image: building2, text: "NITHYA TICKETS" },
-    { image: building3, text: "NITHYA EVENTS" },
-    { image: building4, text: "KADAGAM FOUNDATION" },
+    { 
+      image: building1, 
+      text: <><span className="text-red-500">KADAGAM</span> <span className="text-blue-500">VENTURES</span></>,
+      description: "Innovating business solutions for a better tomorrow." 
+    },
+    { 
+      image: building2, 
+      text: "NITHYA TICKETS", 
+      description: "Your one-stop destination for seamless ticket bookings." 
+    },
+    { 
+      image: building3, 
+      text: "NITHYA EVENTS", 
+      description: "Creating memorable experiences through world-class events." 
+    },
+    { 
+      image: building4, 
+      text: "KADAGAM FOUNDATION", 
+      description: "Empowering communities through education and social initiatives." 
+    },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -34,35 +50,24 @@ export default function HeroSection() {
             src={slide.image}
             alt={`Slide ${index + 1}`}
             className={`absolute w-full h-full object-cover transition-opacity duration-1000 ${
-              index === currentIndex ? "opacity-100" : "opacity-0"
+              index === currentIndex ? "opacity-100 scale-105" : "opacity-0"
             }`}
           />
         ))}
-        <div className="absolute inset-0 bg-opacity-50 flex flex-col justify-center items-center text-center px-4 sm:px-6">
-          {/* Dynamic Heading */}
-          <div className="flex items-center justify-center py-4 sm:py-6">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white transition-opacity duration-1000">
-              {slides[currentIndex].text.split(" ").map((word, i) => (
-                <span
-                  key={i}
-                  className={i === 0 ? "text-red-500" : "text-blue-500"}
-                >
-                  {word}{" "}
-                </span>
-              ))}
-            </h1>
-          </div>
+        
+        {/* Overlay Gradient */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/10 flex flex-col justify-center items-center text-center px-4 sm:px-6">
+          
+          {/* Slide Title */}
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white transition-all duration-1000">
+            {slides[currentIndex].text}
+          </h1>
 
-          {/* Description */}
-          <p className="text-gray-200 mt-3 sm:mt-4 max-w-lg sm:max-w-2xl text-sm sm:text-base">
-            Offering free education to those in need and protecting the sacred cow,
-            we contribute to a more harmonious society.
+          {/* Slide Description */}
+          <p className="text-gray-300 mt-4 max-w-xl text-lg sm:text-xl transition-opacity duration-1000">
+            {slides[currentIndex].description}
           </p>
 
-          {/* Button */}
-          <button className="mt-4 sm:mt-6 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-6 rounded-lg text-sm sm:text-base">
-            Learn More
-          </button>
         </div>
       </div>
 
@@ -93,12 +98,12 @@ export default function HeroSection() {
             href={item.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-white shadow-md p-4 rounded-lg flex items-center space-x-3 w-full max-w-[320px] sm:max-w-[280px] hover:shadow-lg transition"
+            className="bg-white shadow-md p-6 rounded-lg flex items-center space-x-4 w-full max-w-[320px] sm:max-w-[280px] hover:shadow-xl transition-transform transform hover:scale-105"
           >
-            <img src={item.icon} alt={item.title} className="w-10 h-10 sm:w-12 sm:h-12" />
+            <img src={item.icon} alt={item.title} className="w-12 h-12" />
             <div>
-              <h3 className="text-base sm:text-lg font-semibold">{item.title}</h3>
-              <p className="text-gray-600 text-xs sm:text-sm">{item.description}</p>
+              <h3 className="text-lg font-semibold">{item.title}</h3>
+              <p className="text-gray-600 text-sm">{item.description}</p>
             </div>
           </a>
         ))}

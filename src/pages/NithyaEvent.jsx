@@ -77,9 +77,7 @@ const NithyaEventPage = () => {
           <p className="mt-4 max-w-lg">
           Bringing events to life with unmatched precision and creativity. From corporate gatherings to grand celebrations, we handle everything from planning to execution, ensuring unforgettable experiences.
           </p>
-          <button className="mt-6 px-6 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition">
-            Get Started
-          </button>
+          
         </div>
       </div>
 
