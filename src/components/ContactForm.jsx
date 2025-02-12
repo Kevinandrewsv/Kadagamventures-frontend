@@ -1,78 +1,77 @@
 export default function ContactForm() {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-blue-100 px-4 pt-30 pb-15">
-        <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-2xl">
-          {/* Title */}
-          <h2 className="text-2xl font-semibold text-center text-gray-900">
-            Say hello
-          </h2>
-          <p className="text-gray-600 text-center mb-6">
-            Lorem Ipsum is simply dummy text of the printing.
-          </p>
-  
-          {/* Form */}
-          <form className="space-y-4">
-            {/* Name Fields */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div>
-                <label className="text-gray-700">First Name</label>
-                <input
-                  type="text"
-                  placeholder="First Name"
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                />
-              </div>
-              <div>
-                <label className="text-gray-700">Last Name</label>
-                <input
-                  type="text"
-                  placeholder="Last Name"
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                />
-              </div>
-            </div>
-  
-            {/* Email Field */}
-            <div>
-              <label className="text-gray-700">Email Address</label>
-              <input
-                type="email"
-                placeholder="Email Address"
-                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-            </div>
-  
-            {/* Phone Number Field */}
-            <div>
-              <label className="text-gray-700">Phone Number</label>
+  return (
+    <div className="min-h-screen pt-35 flex items-center justify-center px-5 py-10 ">
+      <div className="bg-white p-10 rounded-xl shadow-md w-full max-w-md border border-gray-300">
+        {/* Title */}
+        <h2 className="text-xl font-semibold text-center text-gray-900">Start with your free account today.</h2>
+
+        {/* Form */}
+        <form className="space-y-4 mt-4">
+          {/* First Name */}
+          <div>
+            <label className="text-gray-700 font-medium">First Name *</label>
+            <input
+              type="text"
+              placeholder="John"
+              className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-black"
+            />
+          </div>
+          
+          {/* Last Name */}
+          <div>
+            <label className="text-gray-700 font-medium">Last Name *</label>
+            <input
+              type="text"
+              placeholder="Doe"
+              className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-black"
+            />
+          </div>
+
+          {/* Email */}
+          <div>
+            <label className="text-gray-700 font-medium">Email *</label>
+            <input
+              type="email"
+              placeholder="example@domain.com"
+              className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-black"
+            />
+          </div>
+
+          {/* Phone Number */}
+          <div>
+            <label className="text-gray-700 font-medium">Phone Number *</label>
+            <div className="flex items-center border border-gray-300 rounded p-2">
+             
               <input
                 type="tel"
-                placeholder="Phone Number"
-                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                placeholder="1234567890"
+                className="w-full outline-none pl-2"
               />
             </div>
-  
-            {/* Message Field */}
-            <div>
-              <label className="text-gray-700">Message</label>
-              <textarea
-                rows="4"
-                placeholder="Write your message..."
-                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-              ></textarea>
-            </div>
-  
-            {/* Submit Button */}
-            <div className="text-center">
-              <button
-                type="submit"
-                className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold"
-              >
-                Get in touch
-              </button>
-            </div>
-          </form>
-        </div>
+          </div>
+
+          {/* Message */}
+          <div>
+            <label className="text-gray-700 font-medium">Message</label>
+            <textarea
+              rows="3"
+              placeholder="Write your message..."
+              className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-black"
+            ></textarea>
+          </div>
+
+          {/* Submit Button */}
+          <div className="text-center">
+            <button
+              type="submit"
+              className="w-full bg-red-400 text-white font-semibold py-2 rounded cursor-not-allowed"
+              disabled
+            >
+              SEND MESSAGE
+            </button>
+          </div>
+        </form>
       </div>
-    );
-  }
+    </div>
+  );
+}

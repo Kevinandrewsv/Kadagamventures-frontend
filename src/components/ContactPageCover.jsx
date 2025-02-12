@@ -6,35 +6,13 @@ export default function ContactSection() {
       {/* Left Side - Text and Socials */}
       <div className="flex flex-col md:flex-row items-center px-7">
         <div className="md:w-1/2 space-y-6 relative z-10">
-          {/* Profile Image */}
-          <div className="w-14 h-14 rounded-full bg-gray-200 flex items-center justify-center">
-            <img
-              src="https://i.pravatar.cc/50"
-              alt="Profile"
-              className="rounded-full"
-            />
-          </div>
+          
 
-          <h2 className="text-3xl font-bold text-gray-900">Let’s Collaborate</h2>
-          <p className="text-gray-600 text-lg">
-            Lorem Ipsum is simply dummy text of the <br /> printing.
-          </p>
+          <h2 className="text-3xl font-bold text-gray-900">Let's Collabrate</h2>
+          <h2 className="text-xl text-gray-900">Create something impactful together! Reach out to Kadagam Ventures today.</h2>
+          
 
-          {/* Social Icons */}
-          <div className="flex space-x-4">
-            <div className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 cursor-pointer">
-              F
-            </div>
-            <div className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 cursor-pointer">
-              I
-            </div>
-            <div className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 cursor-pointer">
-              T
-            </div>
-            <div className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 cursor-pointer">
-              L
-            </div>
-          </div>
+            
         </div>
 
         {/* Right Side - Map and Contact */}

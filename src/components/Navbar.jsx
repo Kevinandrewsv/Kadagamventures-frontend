@@ -98,9 +98,13 @@ export default function Navbar() {
       </ul>
 
       {/* Desktop Button */}
-      <button className="hidden md:block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-all duration-300">
-        Get Started
-      </button>
+      <button 
+  className="hidden md:block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-all duration-300"
+  onClick={() => handleNavigate("/contactus")} // Ensure correct route
+>
+  Get Started
+</button>
+
 
       {/* Mobile Menu Button */}
       <button className="md:hidden text-gray-700 text-2xl" onClick={() => setMenuOpen(!menuOpen)}>

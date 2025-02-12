@@ -12,6 +12,7 @@ import KadagamFoundation from "./pages/KadagamFoundation.jsx";
 function App() {
   return (
     <Router>
+    
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />

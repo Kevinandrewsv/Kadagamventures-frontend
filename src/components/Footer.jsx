@@ -2,23 +2,31 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookF, faInstagram, faTwitter, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom"; // Import Link for navigation
+import kadagamLogo from "../assets/kadagamLogo.png"; // Import your logo
+
+// Shared navigation links (same as Navbar)
+const navLinks = [
+  { name: "Home", path: "/" },
+  { name: "About", path: "/aboutus" },
+  { name: "Contact Us", path: "/contactus" }
+];
 
 export default function Footer() {
   const location = useLocation();
   const [currentPath, setCurrentPath] = useState(location.pathname);
 
   useEffect(() => {
-    setCurrentPath(location.pathname); // Ensure state updates on route change
-    console.log("Current Path:", location.pathname); // Debugging
+    setCurrentPath(location.pathname);
   }, [location.pathname]);
 
   // Normalize paths to remove trailing slashes
   const normalizedPath = currentPath.replace(/\/$/, "");
 
-  // Define pages where "Kadagam Ventures" should be visible
-  const showKadagamText = ["/", "/about", "/contact"].includes(normalizedPath);
+  // Define pages where the logo should be visible
+  const showKadagamLogo = ["/", "/aboutus", "/contactus"].includes(normalizedPath);
 
-  // Social Media Links for Each Section
+  // Social Media Links
   const socialMediaLinks = {
     "/NithyaEvent": [
       { icon: faFacebookF, url: "https://www.facebook.com/share/19vAnCKb8e/", bgColor: "bg-blue-600", hoverColor: "hover:bg-blue-700" },
@@ -48,10 +56,13 @@ export default function Footer() {
         <div>
           <h3 className="font-semibold text-gray-900 text-lg">Quick Links</h3>
           <ul className="text-gray-600 text-sm space-y-2 mt-3">
-            <li><a href="/" className="hover:text-indigo-500 transition duration-300">Home</a></li>
-            <li><a href="/about" className="hover:text-indigo-500 transition duration-300">About</a></li>
-            <li><a href="/products" className="hover:text-indigo-500 transition duration-300">Products</a></li>
-            <li><a href="/contact" className="hover:text-indigo-500 transition duration-300">Contact us</a></li>
+            {navLinks.map((link, index) => (
+              <li key={index}>
+                <Link to={link.path} className="hover:text-indigo-500 transition duration-300">
+                  {link.name}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
 
@@ -66,20 +77,21 @@ export default function Footer() {
           </p>
         </div>
 
-        {/* Right Side: Kadagam Ventures Text or Social Links */}
-        <div>
-          {/* Show "Kadagam Ventures" text on Home, About, Contact pages */}
-          {showKadagamText && (
-            <h1 className="text-6xl sm:text-6xl md:text-5xl font-bold text-white py-8">
-              <span className="text-red-500">Kadagam</span>{" "}
-              <span className="text-blue-600">Ventures</span>
-            </h1>
-          )}
+        {/* Right Side: Logo or Social Links */}
+        <div className="flex flex-col items-center md:items-end">
+          {/* Show Kadagam Ventures Logo on Home, About, Contact pages */}
+          
+            <img
+              src={kadagamLogo}
+              alt="Kadagam Ventures Logo"
+              className="h-20 md:h-24 px-20 object-contain"
+            />
+          
 
-          {/* Show Social Links based on current page */}
+          {/* Show Social Links based on the current page */}
           {socialMediaLinks[normalizedPath] && (
             <div>
-              <h3 className="font-semibold text-gray-900 text-lg">Follow Us</h3>
+              <h3 className="font-semibold text-gray-900 text-lg mt-4">Follow Us</h3>
               <div className="flex justify-center md:justify-end space-x-4 mt-3">
                 {socialMediaLinks[normalizedPath].map((link, index) => (
                   <a
